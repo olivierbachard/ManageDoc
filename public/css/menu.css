@@ -1,0 +1,31 @@
+/*** Global variables definition ***/
+nav#primaryNav {
+  width: 100%;
+  background: linear-gradient(to top, #2f2933, #3c3441); }
+  nav#primaryNav ul {
+    text-align: center;
+    border-bottom: 1px solid #cac8c9;
+    position: relative;
+    margin: 0; }
+    nav#primaryNav ul li {
+      display: inline-block;
+      margin: 0 10px; }
+      nav#primaryNav ul li:hover a {
+        border-bottom: 2px solid #bdf271;
+        background-color: #443b4a; }
+      nav#primaryNav ul li a {
+        display: inline-block;
+        line-height: 40px;
+        padding: 0 10px;
+        color: white;
+        text-decoration: none;
+        transition: all 150ms cubic-bezier(0.77, 0, 0.175, 1) 0s;
+        border-bottom: 2px solid #2f2933; }
+
+nav.secondaryNav {
+  position: absolute;
+  height: 100%;
+  background: linear-gradient(to right, #2f2933, #342e39);
+  box-shadow: 3px 0 3px #cac8c9;
+  color: white;
+  padding: 10px; }

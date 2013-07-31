@@ -1,0 +1,37 @@
+
+// Import 'open sans' font
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=latin,latin-ext);
+
+@import "variables";
+
+html, body {
+	height: 100%;
+}
+
+body {
+	background-color: $colorWhitesmoke;
+	font-family: $fontFamily;
+	font-size: $contentFontSize;
+	color: $colorShadedTrees;
+}
+
+h1 {
+	font-weight: normal;
+	font-size: $titleFontSize;
+	color: $colorShadedTrees;
+}
+
+h2 {
+	font-weight: normal;
+	font-size: $subtitleFontSize;
+	line-height: $subtitleFontSize + 2;
+	color: $colorLightGreen;
+	border-bottom: 1px solid $colorLightGreen;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+// Change the opacity of the bootstrap modal background
+.modal-backdrop, .modal-backdrop.fade.in {
+    opacity: 0.4;
+}

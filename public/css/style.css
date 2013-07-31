@@ -1,0 +1,27 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=latin,latin-ext);
+/*** Global variables definition ***/
+html, body {
+  height: 100%; }
+
+body {
+  background-color: #f5f5f5;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  color: #2f2933; }
+
+h1 {
+  font-weight: normal;
+  font-size: 30px;
+  color: #2f2933; }
+
+h2 {
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+  color: #bdf271;
+  border-bottom: 1px solid #bdf271;
+  margin-bottom: 10px;
+  margin-top: 20px; }
+
+.modal-backdrop, .modal-backdrop.fade.in {
+  opacity: 0.4; }

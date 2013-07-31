@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html  id="ng-app" ng-app="SmartInternalDoc">
+<head>
+    <title>Manage technical documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/menu.css" />
+
+    
+
+</head>
+<body ng-controller="mainController">
+
+<nav id="primaryNav">
+	<ul>
+		<li><a href="#/ManageDoc">Manage Doc</a></li>
+		<li><a href="#/ComponentsLibrary">Components Library</a></li>
+		<li><a href="#/Graphics">Graphics</a></li>
+	</ul>	
+</nav>
+
+<div ng-view></div>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js" ></script>
+<script type="text/javascript" src="http://code.angularjs.org/1.0.7/angular-resource.min.js"></script>
+<script type="text/javascript" src="/bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="/scripts/main.js"></script>
+</body>
+</html>
