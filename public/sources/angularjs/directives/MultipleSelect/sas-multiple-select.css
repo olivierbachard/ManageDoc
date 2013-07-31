@@ -1,0 +1,171 @@
+/*********************************************/
+/*	SASS functions to apply different css 
+/*	properties cross browser.
+/*********************************************/
+/*** Opacity ***/
+/*** Opacity ***/
+/*** Border Radius ***/
+/*********************/
+/*** Border Radius ***/
+/*** Linear Gradient ***/
+/***********************/
+/*** Linear Gradient ***/
+/*** Box shadow ***/
+/******************/
+/*** Box shadow ***/
+/*** Transitions ***/
+/*******************/
+/*** Transitions ***/
+/*** Animations ***/
+/******************/
+/*** Animations ***/
+/*** Multiple Columns ***/
+/************************/
+/* 
+create multiple columns for laying out text - like in newspapers!
+*/
+/*** Multiple Columns ***/
+/******************************************************************/
+/*
+/* This file include common classes to Manage
+/* It is recommended to use these classes instead of hard coding the values !!
+/* this way we ensure that Manage will stay compliant in front of the graphic
+/*
+/******************************************************************/
+/*********************************************/
+/*	SASS functions to apply different css 
+/*	properties cross browser.
+/*********************************************/
+/*** Opacity ***/
+/*** Opacity ***/
+/*** Border Radius ***/
+/*********************/
+/*** Border Radius ***/
+/*** Linear Gradient ***/
+/***********************/
+/*** Linear Gradient ***/
+/*** Box shadow ***/
+/******************/
+/*** Box shadow ***/
+/*** Transitions ***/
+/*******************/
+/*** Transitions ***/
+/*** Animations ***/
+/******************/
+/*** Animations ***/
+/*** Multiple Columns ***/
+/************************/
+/* 
+create multiple columns for laying out text - like in newspapers!
+*/
+/*** Multiple Columns ***/
+/******************************************************************/
+/*
+/* This file include common variables to Manage
+/* It is recommended to use these variables instead of hard coding the values !!
+/* this way we ensure that Manage will stay compliant in front of the graphic
+/*
+/******************************************************************/
+/*** textInput : Generic style for input textboxes ***/
+/*** End textInput ***/
+/*** PressableLabel : Generic style for button with a label look ***/
+/*** End PressableLabel ***/
+/*** Input with delete cross at the end ***/
+/*** End Input with delete cross at the end ***/
+.sasInputWithDelete {
+  outline: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #CACACA;
+  display: inline-block;
+  margin-bottom: 1px;
+  background-color: white; }
+  .sasInputWithDelete .sasInputWithDelete_Input {
+    padding: 1px 5px;
+    outline: none;
+    border: none;
+    width: 18em;
+    vertical-align: middle;
+    -webkit-box-shadow: 0 0;
+    -moz-box-shadow: 0 0;
+    -o-box-shadow: 0 0;
+    box-shadow: 0 0; }
+    .sasInputWithDelete .sasInputWithDelete_Input:focus {
+      outline: none;
+      border: none;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -o-box-shadow: none;
+      box-shadow: none;
+      background-color: none; }
+  .sasInputWithDelete .sasInputWithDelete_Img {
+    visibility: hidden;
+    vertical-align: middle;
+    padding: 3px; }
+    .sasInputWithDelete .sasInputWithDelete_Img:hover {
+      cursor: pointer; }
+  .sasInputWithDelete.sasInputWithDelete_focus {
+    border: 1px solid #9ecaed;
+    background-color: #f8fbfe;
+    -webkit-box-shadow: 0 0 2px #9ecaed;
+    -moz-box-shadow: 0 0 2px #9ecaed;
+    -o-box-shadow: 0 0 2px #9ecaed;
+    box-shadow: 0 0 2px #9ecaed; }
+
+div.sasMultipleSelectDiv {
+  min-width: 600px; }
+  div.sasMultipleSelectDiv li {
+    word-wrap: break-word; }
+    div.sasMultipleSelectDiv li img {
+      padding-right: 1px;
+      padding-bottom: 2px;
+      vertical-align: middle; }
+  div.sasMultipleSelectDiv .list {
+    display: inline-block;
+    height: 200px;
+    overflow: hidden;
+    border: 1px solid #CACACA;
+    background-color: #EFF3F5; }
+    div.sasMultipleSelectDiv .list .itemTitle {
+      position: relative;
+      background: #4e525b;
+      background-image: -webkit-linear-gradient(top, #5a5f69, #454952) ;
+      background-image: -moz-linear-gradient(center top, #5a5f69, #454952) ;
+      background-image: -ms-linear-gradient(center top, #5a5f69, #454952) ;
+      background-image: -o-linear-gradient(top, #5a5f69, #454952) ;
+      background-image: linear-gradient(to bottom, #5a5f69, #454952) ;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.5); }
+      div.sasMultipleSelectDiv .list .itemTitle a {
+        display: block;
+        padding-left: 15px;
+        color: white; }
+        div.sasMultipleSelectDiv .list .itemTitle a .arrowIcon {
+          position: absolute;
+          left: 0;
+          top: 0;
+          display: inline-block;
+          width: 16px;
+          height: 16px; }
+          div.sasMultipleSelectDiv .list .itemTitle a .arrowIcon.collapsed {
+            background-image: url("/Admin/libjs/jquery-ui/themes/smoothness/images/ui-icons_ffffff_256x240.png");
+            background-position: -32px -16px; }
+          div.sasMultipleSelectDiv .list .itemTitle a .arrowIcon.expanded {
+            background-image: url("/Admin/libjs/jquery-ui/themes/smoothness/images/ui-icons_ffffff_256x240.png");
+            background-position: -64px -16px; }
+    div.sasMultipleSelectDiv .list .itemsList {
+      padding: 2px 0 5px 5px; }
+  div.sasMultipleSelectDiv .listTitle {
+    display: inline-block;
+    width: 50%; }
+  div.sasMultipleSelectDiv .selectedListTitle {
+    display: inline-block;
+    width: 47%;
+    float: right; }
+  div.sasMultipleSelectDiv .sourceListDiv {
+    width: 50%; }
+  div.sasMultipleSelectDiv .selectedListDiv {
+    float: right;
+    width: 47%; }
+

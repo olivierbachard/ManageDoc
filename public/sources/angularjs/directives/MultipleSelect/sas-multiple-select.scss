@@ -1,0 +1,94 @@
+@import "../../../../css/mixins";
+@import "../../../../css/sas_manage_classes";
+
+$leftDivWidth: 50%;
+$rightDivWith: 47%;
+
+@include sasInputWithDelete;
+
+div.sasMultipleSelectDiv
+{
+	min-width: 600px;
+	li {
+		word-wrap: break-word;
+		
+		img {
+			padding-right: 1px;
+			padding-bottom: 2px;
+			vertical-align: middle;
+		}
+	}
+
+	.list {
+		display: inline-block;
+		height: 200px;
+		overflow: hidden;
+		border: 1px solid #CACACA;
+		background-color: #EFF3F5;
+
+		.itemTitle {
+			position: relative;
+			background: rgb(78,82,91);
+			@include linearGradientVertical(#5A5F69, #454952);
+			border-top: 1px solid rgba(255,255,255,.2);
+			border-bottom: 1px solid rgba(0,0,0,.5);
+
+			a {
+				display: block;
+				padding-left: 15px;
+				color: white;
+
+				.arrowIcon {
+					position: absolute;
+					left: 0;
+					top: 0;
+					display: inline-block;
+					width: 16px;
+					height: 16px;
+
+					&.collapsed {
+						background-image: url("/Admin/libjs/jquery-ui/themes/smoothness/images/ui-icons_ffffff_256x240.png");
+						background-position: -32px -16px;
+					}
+
+					&.expanded {
+						background-image: url("/Admin/libjs/jquery-ui/themes/smoothness/images/ui-icons_ffffff_256x240.png");
+						background-position: -64px -16px;
+					}
+				}
+
+			}
+
+			
+		}
+
+		.itemsList {
+			padding: 2px 0 5px 5px;
+		}
+	}
+
+	.listTitle
+	{
+		display: inline-block;
+		width: $leftDivWidth;
+	}
+
+	.selectedListTitle
+	{
+		display: inline-block;
+		width: $rightDivWith;
+		float: right;
+	}
+
+	.sourceListDiv
+	{
+		width: $leftDivWidth;	
+	}
+
+	.selectedListDiv
+	{
+		float: right;
+		width: $rightDivWith;
+	}
+}
+

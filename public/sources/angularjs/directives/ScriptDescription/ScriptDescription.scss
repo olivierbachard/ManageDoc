@@ -1,0 +1,232 @@
+﻿@import "../../../../css/buttons";
+
+$textColor: #333;
+
+#templateDescWrapper
+{
+	height: 115px;
+	position: relative;
+	background-color: white;
+	padding-left: 25px;
+	top: -5px;
+	z-index: 2;
+	.sas_error
+	{
+		text-decoration:none;
+		font-size: 12px;
+		color: red;
+		font-weight:normal;
+		padding-left:10px;
+	}
+
+	.thumbnailContainer {
+		float:left;
+		text-align:center;
+		position:relative;
+		width: 107px;
+
+		&:hover 
+		{
+			cursor: pointer;
+		}
+
+		.thumbnail {
+			position:relative;
+			display: block;
+			z-index: 4;
+
+			padding: 4px 3px;
+			background-color: #353535;
+			border-top: 1px solid #353535;
+			border-right: 1px solid #353535;
+			@include borderRadius(5px);
+
+			#thumbImageCanvas {
+				position: absolute;
+				left: 0;
+				top: 0;
+				z-index: 5;
+			}
+
+			.thumbImage
+			{
+				@include borderRadius(5px);
+				
+				&:hover {
+					cursor: pointer;
+				}
+			}
+		}
+
+		#thumbShadow {
+			position: relative;
+			top: -1px;
+			background-color: #F0F0F0;
+			height: 1px;
+			z-index: 3;
+			@include boxShadows("0 0 5px 1px #888, 0 0 5px 1px #ccc inset");
+		}
+	}
+
+	.middlePanel
+	{
+		position: relative;
+		top: -3px;
+		padding-left: 10px; 
+		overflow: hidden;
+
+		.lightColor {
+			color: #666;
+		}
+
+		.scriptName
+		{
+			margin-bottom: 3px;
+
+			.title
+			{
+				color: $textColor;
+				font-size: 18px;
+				margin-right: 10px;
+			}
+
+			.star
+			{
+				border-width:0px;
+				cursor:pointer;
+				padding-right:5px;
+				padding-bottom:3px;
+			}
+
+			.draftObsolete {
+				display: inline-block;
+				padding: 1px 3px;
+				background-color: #D8D8D8;
+				border: 1px solid rgba(0, 0, 0, 0.3);
+				color: rgba(0, 0, 0, 0.8);
+				@include borderRadius(5px);
+				vertical-align: top;
+				margin-right: 10px;
+			}
+
+			.label {
+				display: inline-block;
+				white-space: nowrap;
+				padding: 1px 4px;
+				margin-right: 3px;
+				martgin-bottom: 1px;
+				border: 1px solid #bbb;
+				border: 1px solid rgba(0, 0, 0, 0.3);
+				color: rgba(0, 0, 0, 0.8);
+				@include borderRadius(4px);
+				vertical-align: top;
+
+			}
+
+		}
+
+		#templateContent 
+		{
+			height: 60px;
+
+			#templateDescContainer
+			{
+				display: inline-block;
+				position: relative;
+				left: -8px;
+				min-width: 40%;
+				height: inherit;
+				vertical-align: top;
+				overflow: hidden;
+
+				.descriptionDiv {
+					height: 60px;
+					padding-left: 8px;
+					overflow: hidden;
+					color: $textColor;
+				}
+			}
+
+			#propertiesContainer
+			{
+				.lineSeparator {
+					padding-right: 20px;
+					float: left;
+				}
+
+				display: inline-block;
+				vertical-align: top;
+				padding-left: 20px;
+				height: inherit;
+				width: 220px;
+
+				.properties
+				{
+					padding-top:0;
+					padding-bottom: 2px;
+					color: $textColor;
+				}
+			}
+
+			#sdkVersionsContainer {
+				.lineSeparator {
+					padding-right: 20px;
+					float: left;
+				}
+
+				display: inline-block;
+				min-width: 150px;
+				vertical-align: top;
+				height: inherit;
+				color: $textColor;
+
+				.version {
+					padding-left: 10px;
+				}
+			}
+
+			
+		}
+
+		
+	}
+
+
+	#actionsButtonDiv {
+		position: absolute;
+		margin-left: 115px;
+		bottom: -5px;
+		background-color: white;
+
+		.actionsButton {
+			@include sas_button;
+		}
+
+		.templateLibraryBtn {
+			color: #2b3945;
+			background-color: darken(#DFEBF7, 5%);
+			@include linearGradientVertical(#DFEBF7, darken(#DFEBF7, 8%));
+			background-repeat: repeat-x;
+			border-color: #8eacc0;
+			filter: progid:dximagetransform.microsoft.gradient(startColorstr='#DFEBF7', endColorstr='#D3DFEB', GradientType=0);
+			@include boxShadows(0px 0px 3px #86AAC2);
+
+			&:hover,
+			&:active,
+			&.active,
+			&.disabled,
+			&[disabled] {
+				filter: progid:dximagetransform.microsoft.gradient(enabled=false);
+				background-color: darken(#DFEBF7, 8%);
+			}
+
+		}
+
+		.actionsButtonWarning {
+			@include sas_button_warning;
+		}
+	}
+
+}
+
+

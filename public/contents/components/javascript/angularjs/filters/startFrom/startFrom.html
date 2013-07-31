@@ -1,0 +1,36 @@
+
+<h1>StartFrom Filter</h1>
+
+<p>
+	This filter return a subset of an array, starting from a specified index to the end of the array.<br />
+	NOTE: this filter is the opposite of the "limitTo" filter from AngularJS</p>
+
+<h2>Example</h2>
+
+
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a href="#html" data-toggle="tab">HTML</a></li>
+  <li><a href="#javascript" data-toggle="tab">Javascript</a></li>
+
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="html">
+  		<pre>&lt;p&gt;Code example with pre&lt;/p&gt;</pre>
+  </div>
+  <div class="tab-pane" id="javascript">
+  		<code>&lt;code example on on line&gt;</code>
+  </div>
+</div>
+
+<div ng-controller="myController">
+	<p>Input array: {{ myArray }}</p>
+	<p>Choose an start index : <input type="text" ng-init="0" ng-model="startIndex"></p>
+	<p>Output array: 
+		<span ng-repeat="item in myArray | startFrom:startIndex">
+			{{ item }} 
+			<span ng-show="$index != $last">
+		</span></p>	
+</div>
+
+<script type="text/javascript" src="contents/components/javascript/angularjs/filters/startFrom/startFrom.js"></script>

@@ -10,9 +10,11 @@ html, body {
 
 body {
 	background-color: $colorWhitesmoke;
+	background-color: #F8F8F8;
 	font-family: $fontFamily;
 	font-size: $contentFontSize;
 	color: $colorShadedTrees;
+	color: #777;
 }
 
 h1 {
@@ -25,8 +27,8 @@ h2 {
 	font-weight: normal;
 	font-size: $subtitleFontSize;
 	line-height: $subtitleFontSize + 2;
-	color: $colorLightGreen;
-	border-bottom: 1px solid $colorLightGreen;
+	//color: $colorLightGreen;
+	//border-bottom: 1px solid $colorLightGreen;
 	margin-bottom: 10px;
 	margin-top: 20px;
 }

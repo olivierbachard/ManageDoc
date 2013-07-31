@@ -1,0 +1,72 @@
+﻿<div class="sasMultipleSelectDiv">
+
+    <h2 class="listTitle" ng-show="options.showTitles">{{ options.sourceTitle }}</h2>
+    <h2 class="selectedListTitle" ng-show="options.showTitles">{{ options.selectionTitle }}</h2>
+
+    <div class="searchTBDiv">
+        <sas-input-with-delete ng-model="searchValue" ng-change="searchValueChange()" placeholder="{{ options.placeholderText }}"></sas-input-with-delete>
+    </div>
+
+
+    <div class="sourceListDiv list nicescroll" nicescroll-options="{{ options.nicescrollOptions }}" ng-switch on="options.groupByParent">
+        <i ng-show="options.sourceItems.length <= 0">{{ options.NoItemsToSelectText }}</i>
+
+        <ul ng-switch-when="true">
+            <li ng-repeat="parent in parentList" ng-show="(options.sourceItems | exactMatch:{'parentName': parent.Name } | filter:{ 'Name' : searchValue }).length > 0">
+                <div class="itemTitle">
+                    <a href="javascript:void(0);" ng-click="toggleExpand(parent)">
+                        <span ng-class="{arrowIcon: true, expanded: parent.expanded, collapsed: !parent.expanded}"></span>
+                        {{ parent.Name }}
+                    </a>
+                </div>
+                <ul class="itemsList" ng-show="parent.expanded">
+                    <li ng-repeat="item in options.sourceItems | exactMatch:{'parentName': parent.Name} | filter:{ 'Name' : searchValue } | orderBy:'Name'">
+                        <a href="javascript:void(0);" ng-click="addItem(item)">
+                            <img alt="add" src="/gestion/images/icons/plus_green_16x16.png" />
+                            {{ item.Name }} <span ng-show="options.showIds"> - {{ item.Id }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul ng-switch-default class="itemsList">
+            <li ng-repeat="item in options.sourceItems | filter:searchValue | orderBy:'Name'">
+                <a href="javascript:void(0);" ng-click="addItem(item)">
+                    <img alt="add" src="/gestion/images/icons/plus_green_16x16.png" />
+                    {{ item.Name }} <span ng-show="options.showIds"> - {{ item.Id }}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="selectedListDiv list nicescroll" nicescroll-options="{{ options.nicescrollOptions }}" ng-switch on="options.groupByParent">
+        <i ng-show="options.selectedItems.length <= 0">{{ options.NoItemsSelectedText }}</i>
+
+        <ul ng-switch-when="true">
+            <li ng-repeat="parent in selectedParentList | orderBy:'Name'" ng-show="(options.selectedItems | exactMatch:{'parentName': parent.Name }).length > 0">
+                <div class="itemTitle">
+                    <a href="javascript:void(0);" ng-click="toggleExpand(parent)">
+                        <span ng-class="{arrowIcon: true, expanded: parent.expanded, collapsed: !parent.expanded}"></span>
+                        {{ parent.Name }}
+                    </a>
+                </div>
+                <ul class="itemsList" ng-show="parent.expanded">
+                    <li ng-repeat="item in options.selectedItems | exactMatch:{'parentName': parent.Name } | orderBy:'Name'">
+                        <a href="javascript:void(0);" ng-click="removeItem(item)">
+                            <img alt="remove" src="/gestion/images/icons/bullet_delete.png" />
+                            {{ item.Name }} <span ng-show="options.showIds"> - {{ item.Id }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul ng-switch-default class="itemsList">
+            <li ng-repeat="item in options.selectedItems | orderBy:'Name'">
+                <a href="javascript:void(0);" ng-click="removeItem(item)">
+                    <img alt="remove" src="/gestion/images/icons/bullet_delete.png" />
+                    {{ item.Name }} <span ng-show="options.showIds"> - {{ item.Id }}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

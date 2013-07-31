@@ -1,0 +1,62 @@
+﻿
+
+<div id="divTemplateSelected">
+    <input type="hidden" id="selectedTemplate" value="{{ currentScript.Id }}" />
+    <div class="thumbnailContainer" ng-click="thumbImageClick();">
+        <span class="thumbnail">
+            <canvas id="thumbImageCanvas" width="106" height="83"></canvas>
+            <img class="thumbImage" ng-src="{{ currentScript.IconImage }}" />
+        </span>
+        <div id="thumbShadow"></div>
+    </div>
+    
+
+    <div class="middlePanel">
+        <div class="scriptName" >
+            <img id="ImgStar" class="star" ng-src="/gestion/images/etoile{{ GetStarColor(currentScript.IsFavorite) }}.png" style="display: none"  />
+            <span class="title">{{currentScript.TranslatedName}}</span>
+            <span class="draftObsolete" ng-show="currentScript.Status != undefined" >{{currentScript.Status}}</span>
+            <span ng-repeat="label in currentScript.MainLabels" class="label enhanced" ng-style="{ backgroundColor: label.Color }">{{label.TagName}}</span>&nbsp;&nbsp;
+            <span ng-repeat="label in currentScript.GenericLabels" class="label generic" ng-style="{ backgroundColor:label.Color }">{{label.TagName}}</span>
+            <div ng-show="currentPage.toLowerCase() == 'mediacenter' && currentScript.DraftID > 0">
+                <a href="javascript:void(0);" ng-click="useDraftClick()">{{ trads.UseDraft }}</a>
+            </div>
+            <div ng-show="currentPage.toLowerCase() == 'mediacenter' && currentScript.IsDraft && currentScript.OriginalScriptID > 0">
+                <a href="javascript:void(0);" ng-click="usePublishedClick()">{{ trads.UsePublished }}</a>
+            </div>
+        </div>
+
+        <div id="templateContent">
+            <div id="templateDescContainer" ng-show="currentScript.ModeEmploi.length > 0">
+                <div ng-bind-html-unsafe="currentScript.ModeEmploi" class="descriptionDiv" ></div>
+            </div>
+            <div id="sdkVersionsContainer" ng-show="currentScript.SdkVersions != undefined && currentScript.SdkVersions.length > 0">
+                <canvas class="lineSeparator" width="1" height="60" ng-show="currentScript.Mobile && currentScript.Id > 0 && currentScript.ModeEmploi.length > 0"></canvas>
+                <div class="lightColor">{{ trads.Compatibility }} :</div>
+                <div ng-repeat="sdk in currentScript.SdkVersions" class="version">
+                    <span ng-switch on="sdk.osname" >
+                        <img alt="" src="/gestion/images/icons/apple.png" ng-switch-when="iOS" />
+                        <img alt="" src="/gestion/images/icons/android.png" ng-switch-when="Android" />
+                    </span>
+                    {{ DisplaySDKVersion(sdk.SDKMinId) }} - {{ DisplaySDKVersion(sdk.SDKMaxId) }}
+                </div>
+            </div>
+            <div id="propertiesContainer" ng-show="currentScript.Id > 0">
+                <canvas class="lineSeparator" width="1" height="60" ng-hide="currentScript.ModeEmploi.length == 0 && currentScript.SdkVersions.length == 0"></canvas>
+                <div class="properties" ng-show="currentScript.DotNetBackFill" >
+                    <span class="lightColor" >{{ trads.Type }} :</span>&nbsp;<strong>{{ trads.Backfill }}</strong>
+                </div>
+                <div class="properties">
+                    <span class="lightColor">{{ trads.NbMinCrea }} :</span>&nbsp;{{currentScript.NbCreasMin}}
+                </div>
+                <div class="properties">
+                    <a target="_blank" ID="hlTechSpec" ng-show="currentScript.DocumentationURL != ''" ng-href="{{ currentScript.DocumentationURL }}" >{{ trads.TechSpec }}</a>
+                </div>
+            </div>
+            
+            
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+
+</div>
